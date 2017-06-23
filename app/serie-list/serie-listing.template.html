@@ -1,0 +1,24 @@
+<ul>
+  <li ng-repeat="serie in $ctrl.series.list | orderBy:'year'">
+    <span>{{serie.Title}}</span>
+    <br>{{serie.imdbID}}
+    <p>{{serie.Year}}</p>
+
+    <md-button class="md-raised md-cornered" 
+            ng-if="!$ctrl.ehSerieDeUsuario(serie)" 
+            ng-click="$ctrl.adicioneSerieDeUsuario(serie)">Adicione ao Perfil
+        </md-button>
+    <md-button class="md-raised md-cornered"
+            ng-if="$ctrl.ehSerieDeUsuario(serie)" 
+            ng-click="$ctrl.removeSerieDeUsuario(serie)">Remova do Perfil
+        </md-button>
+    <md-button class="md-raised md-cornered"
+            ng-if="!$ctrl.ehSerieDeUsuario(serie) && !$ctrl.ehWatchList(serie)" 
+            ng-click="$ctrl.adicioneWatchList(serie)">Adicione à Watchlist
+        </md-button>
+    <md-button class="md-raised md-cornered"
+            ng-if="$ctrl.ehWatchList(serie)" 
+            ng-click="$ctrl.removeWatchList(serie)">Remova da Watchlist
+        </md-button>
+  </li>
+</ul>
