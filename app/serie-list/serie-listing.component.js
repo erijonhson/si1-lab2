@@ -1,6 +1,5 @@
 'use strict';
 
-// Registrar componente `serieList`
 angular.
   module('serieList').
   component('serieListing', {

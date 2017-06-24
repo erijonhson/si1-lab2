@@ -6,7 +6,7 @@ angular.
   component('watchlist', {
     templateUrl: 'user/watchlist.template.html',
     controller: ['userService',
-      function userController(userService) {
+      function userWatchListController(userService) {
         var ctrl = this;
         ctrl.watchList = userService.watchList;
     }]

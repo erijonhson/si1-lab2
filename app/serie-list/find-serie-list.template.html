@@ -1,46 +1,8 @@
 
-<form class="navbar-search ng-pristine ng-valid" ng-submit="$ctrl.buscarSeries()">
-	<i class="glyphicon glyphicon-search search-icon"></i>
-	<md-input-container md-no-float>
-	<input type="text" ng-model="$ctrl.query" class="search-query ng-pristine ng-valid ng-empty ng-touched" placeholder="Buscar Séries" ng-focus="focus=true" ng-blur="focus=false" autocomplete="off" >
-	</md-input-container>
+<form role="form" ng-submit="$ctrl.buscarSeries()">
+  <div class="form-group">
+    <input ng-model="$ctrl.query" placeholder="Buscar Séries" class="form-control input-lg" id="inputlg" type="text">
+  </div>
 </form>
 
-<!--
-      Busca Série: <input ng-model="$ctrl.query" />
-      <button ng-click="$ctrl.buscarSeries()">Go</button>
-
-	<button class="navbar-search ng-pristine ng-valid" ng-click="$ctrl.buscarSeries()">Buscar</button> -->
-
-<aio-nav-menu>
-	<aio-nav-item>
-		<div>
-			<button class="vertical-menu-item heading level-1 expanded selected" type="button" title="Seriesflix." aria-pressed="true">
-				Seriesflix
-				<md-icon class="rotating-icon mat-icon" role="img" svgicon="keyboard_arrow_right" aria-label="keyboard_arrow_right"><svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path></svg></md-icon>
-			</button>
-
-			<div class="heading-children level-1 expanded selected">
-				<aio-nav-item>
-					<div>
-						<a class="vertical-menu-item level-2 expanded selected" href="#!/perfil" title="Perfil.">
-						Perfil
-						</a>
-					</div>
-				</aio-nav-item>
-				<aio-nav-item>
-					<div>
-						<a class="vertical-menu-item level-2 collapsed" href="#!/watchlist" title="watchlist.">
-						Watchlist
-						</a>
-					</div>
-				</aio-nav-item>
-			</div>
-		</div>
-	</aio-nav-item>
-</aio-nav-menu>
-
-<user-serie-list ng-if="$ctrl.buscaVazia()"></user-serie-list>
-
-<serie-listing ng-if="!$ctrl.buscaVazia()" 
-	series="$ctrl.series"></serie-listing>
+<serie-listing series="$ctrl.series"></serie-listing>

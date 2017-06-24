@@ -1,7 +1,56 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{$ctrl.serie.Title}}</h4>
+      </div>
+      <div class="modal-body">
+        <!-- nome, sinopse, imagem, classificação etária e média do IMDb -->
+        <img src=$ctrl.serie.Poster alt="">
+        <p>Nome: {{$ctrl.serie.Title}}</p>
+        <p>Sinopse: {{$ctrl.serie.Plot}}</p>
+        <p>Classificação Etária: {{$ctrl.serie.Rated}}</p>
+        <p>Média do IMDB: {{$ctrl.serie.imdbRating}}</p>
+
+        <!-- Deverá ter um campo para você incluir sua própria nota na série. -->
+        <!-- Deverá ser possível registrar o último capítulo/episódio que você assistiu de uma determinada temporada da série, este capítulo deve possuir um nome -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
+
   </div>
 </div>
+
+<!--
+Title "Game of Thrones"
+Year  "2011–"
+Rated "TV-MA"
+Released  "17 Apr 2011"
+Runtime "56 min"
+Genre "Adventure, Drama, Fantasy"
+Director  "N/A"
+Writer  "David Benioff, D.B. Weiss"
+Actors  "Peter Dinklage, Lena Headey, Emilia Clarke, Kit Harington"
+Plot  "Nine noble families fight for control over the mythical lands of Westeros, while a forgotten race returns after being dormant for thousands of years."
+Language  "English"
+Country "USA, UK"
+Awards  "Won 1 Golden Globe. Another 244 wins & 413 nominations."
+Poster  "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3NTQ1NDg1Ml5BMl5BanBnXkFtZTgwNzY2NDA0MjI@._V1_SX300.jpg"
+Ratings 
+0 
+Source  "Internet Movie Database"
+Value "9.5/10"
+Metascore "N/A"
+imdbRating  "9.5"
+imdbVotes "1,160,013"
+imdbID  "tt0944947"
+Type  "series"
+totalSeasons  "8"
+Response  "True"
+-->

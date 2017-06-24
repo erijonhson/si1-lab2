@@ -1,18 +1,18 @@
 'use strict';
 
-// Registrar componente `serieList`
 angular.
   module('serieList').
   component('findSerieList', {
     templateUrl: 'serie-list/find-serie-list.template.html',
-    controller: ['$http', function FindSerieListController($http) {
+    controller: ['$http', 'userService', 
+    function FindSerieListController($http, userService) {
       var ctrl = this;
       var omdbGetSerie = 'https://omdbapi.com/?s=TITLE&apikey=93330d3c&type=series';
 
       ctrl.query = '';
 
       ctrl.series = {
-        list: []
+        list: userService.getSerieList()
       };
 
       ctrl.buscarSeries = function() {
@@ -25,13 +25,5 @@ angular.
           });
         }
 
-      ctrl.buscaVazia = function() {
-        return ctrl.series.list.lenght == 0;
-      }
-
-    }],
-    bindings: {
-      query: '<', // '@?', '&', '=' 
-      series: '<'
-    }
+    }]
   });

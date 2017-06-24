@@ -15,6 +15,10 @@ angular.
       list: []
     }
 
+    ctrl.getSerieList = function() {
+      return ctrl.serieList.list;
+    }
+
     ctrl.ehSerieDeUsuario = function(serie) {
       return buscaSerie(ctrl.serieList.list, serie);
     }
@@ -39,6 +43,14 @@ angular.
 
     ctrl.removeWatchList = function(serie) {
       return removeSerie(ctrl.watchList.list, serie);
+    }
+
+    ctrl.atualizarSerie = function(serie) {
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].imdbID === serie.imdbID) {
+          list[i] = serie;
+        }
+      }
     }
 
     function buscaSerie(list, serie) {

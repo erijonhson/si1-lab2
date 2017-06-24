@@ -1,13 +1,13 @@
 'use strict';
 
 angular.
-  module('SeriesflixApp').
-  config(['$locationProvider' ,'$routeProvider',
+  module('app')
+  .config(['$locationProvider' ,'$routeProvider',
     function config($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('!');
 
       $routeProvider.
-        when('/busca', {
+        when('/home', {
           template: '<find-serie-list></find-serie-list>'
         }).
         when('/perfil', {
@@ -16,6 +16,6 @@ angular.
         when('/watchlist', {
           template: '<watchlist></watchlist>'
         }).
-        otherwise('/busca');
+        otherwise('/home');
     }
   ]);
