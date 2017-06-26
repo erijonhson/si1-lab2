@@ -1,8 +1,12 @@
-
 <form role="form" ng-submit="$ctrl.buscarSeries()">
   <div class="form-group">
-    <input ng-model="$ctrl.query" placeholder="Buscar Séries" class="form-control input-lg" id="inputlg" type="text">
+    <div class="input-group input-group-lg">
+      <input ng-model="$ctrl.query" type="text" class="form-control" placeholder="Buscar Séries" aria-describedby="sizing-addon1" >
+      <span class="input-group-addon" id="sizing-addon1">
+        <i class="glyphicon glyphicon-search"></i>
+      </span>
+    </div>
   </div>
 </form>
 
-<serie-listing series="$ctrl.series"></serie-listing>
+<serie-listing series="$ctrl.series" visualizacao="home"></serie-listing>

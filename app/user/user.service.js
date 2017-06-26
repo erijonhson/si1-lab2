@@ -1,6 +1,5 @@
 'use strict';
 
-// Registrar serviços de `user` 
 angular.
   module('user').
   service('userService', [function () {
@@ -45,12 +44,18 @@ angular.
       return removeSerie(ctrl.watchList.list, serie);
     }
 
-    ctrl.atualizarSerie = function(serie) {
+    ctrl.getSerie = function(imdbID) {
+      var list = ctrl.serieList.list;
       for (var i = 0; i < list.length; i++) {
-        if (list[i].imdbID === serie.imdbID) {
-          list[i] = serie;
-        }
+        if (list[i].imdbID === imdbID)
+          return list[i];
       }
+      list = ctrl.watchList.list;
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].imdbID === imdbID)
+          return list[i];
+      }
+      return null;
     }
 
     function buscaSerie(list, serie) {

@@ -32,8 +32,21 @@ angular.
         userService.removeWatchList(serie);
       }
 
+      ctrl.ehVisualizacaoDePerfil = function() {
+        return 'perfil' === ctrl.visualizacao;
+      }
+
+      ctrl.ehVisualizacaoDeWatchlist = function() {
+        return 'watchlist' === ctrl.visualizacao;
+      }
+
+      ctrl.ehVisualizacaoDaHome = function() {
+        return 'home' === ctrl.visualizacao;
+      }
+
     }],
     bindings: {
-      series: '<' // '@?', '&', '=' 
+      series: '<', // '@?', '&', '=' 
+      visualizacao: '@'
     }
   });

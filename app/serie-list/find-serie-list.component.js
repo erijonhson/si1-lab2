@@ -6,8 +6,10 @@ angular.
     templateUrl: 'serie-list/find-serie-list.template.html',
     controller: ['$http', 'userService', 
     function FindSerieListController($http, userService) {
+
       var ctrl = this;
-      var omdbGetSerie = 'https://omdbapi.com/?s=TITLE&apikey=93330d3c&type=series';
+
+      var omdbGetSeries = 'https://omdbapi.com/?s=TITLE&apikey=93330d3c&type=series';
 
       ctrl.query = '';
 
@@ -16,11 +18,11 @@ angular.
       };
 
       ctrl.buscarSeries = function() {
-        $http.get(omdbGetSerie.replace('TITLE', ctrl.query))
+        $http.get(omdbGetSeries.replace('TITLE', ctrl.query))
           .success(function (data){
             ctrl.series.list = data.Search;
           })
-          .error(function (error, status){
+          .error(function (response, error){
             alert('Erro: ' + error);
           });
         }

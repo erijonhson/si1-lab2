@@ -4,6 +4,7 @@ angular.
   module('app')
   .config(['$locationProvider' ,'$routeProvider',
     function config($locationProvider, $routeProvider) {
+
       $locationProvider.hashPrefix('!');
 
       $routeProvider.
@@ -15,6 +16,12 @@ angular.
         }).
         when('/watchlist', {
           template: '<watchlist></watchlist>'
+        }).
+        when('/serie/:imdbID', {
+          template: '<serie></serie>',
+        }).
+        when('/modal', {
+          template: '<modal></modal>',
         }).
         otherwise('/home');
     }

@@ -26,6 +26,7 @@ body {
     }
 }
 
-#example-navbar-collapse-1 {
-	float: left;
+.centered {
+    margin: 0 auto !important;
+    float: none !important;
 }
