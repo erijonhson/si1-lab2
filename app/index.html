@@ -10,6 +10,8 @@
     <title>Seriesflix App</title>
     <meta name="description" content="Lab2 de SI1.">
 
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
@@ -61,9 +63,15 @@
       <div ng-view class="view-frame"></div>
     </div>
 
-    <!-- angular, router, design-->
+    <!-- angular -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
 
     <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -71,22 +79,24 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- componentes -->
+    <!-- components -->
     <script src="app.module.js"></script>
     <script src="app.config.js"></script>
 
     <script src="serie/serie.module.js"></script>
     <script src="serie/serie.component.js"></script>
-
-    <script src="serie-list/serie-list.module.js"></script>
-    <script src="serie-list/serie-listing.component.js"></script>
-    <script src="serie-list/find-serie-list.component.js"></script>
+    <script src="serie/serie-factory.js"></script>
+    <script src="serie/serie.service.js"></script>
+    <script src="serie/serie-listing.component.js"></script>
+    <script src="serie/find-series.component.js"></script>
 
     <script src="user/user.module.js"></script>
     <script src="user/user.service.js"></script>
     <script src="user/user-serie-list.component.js"></script>
     <script src="user/watchlist.component.js"></script>
 
+    <script src="modal/modal.module.js"></script>
+    <script src="modal/modal.service.js"></script>
+
   </body>
 </html>
-

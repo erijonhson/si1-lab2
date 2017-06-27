@@ -23,7 +23,8 @@ angular.
     }
 
     ctrl.adicioneSerieDeUsuario = function(serie) {
-  		ctrl.serieList.list.push(serie);
+      if (!ctrl.ehSerieDeUsuario(serie))
+    		ctrl.serieList.list.push(serie);
       if (ctrl.ehWatchList(serie))
         ctrl.removeWatchList(serie);
     }
@@ -37,7 +38,8 @@ angular.
     }
 
     ctrl.adicioneWatchList = function(serie) {
-      ctrl.watchList.list.push(serie);
+      if (!ctrl.ehWatchList(serie))
+        ctrl.watchList.list.push(serie);
     }
 
     ctrl.removeWatchList = function(serie) {
@@ -56,6 +58,23 @@ angular.
           return list[i];
       }
       return null;
+    }
+
+    ctrl.atualizaSerie = function(serie) {
+      var list = ctrl.serieList.list;
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].imdbID === imdbID) {
+          list[i] = serie;
+          return undefined;
+        }
+      }
+      list = ctrl.watchList.list;
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].imdbID === imdbID) {
+          list[i] = serie;
+          return undefined;
+        }
+      }
     }
 
     function buscaSerie(list, serie) {

@@ -4,6 +4,6 @@ angular.module('app',
   [
     'ngRoute',
     'serie',
-    'serieList', 
-    'user'
+    'user',
+    'modal'
   ]);

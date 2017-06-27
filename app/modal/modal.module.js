@@ -1,4 +1,4 @@
 'use strict';
 
-angular.module('modal', []);
+angular.module('modal', ['ngMaterial']);
 

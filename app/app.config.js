@@ -9,7 +9,7 @@ angular.
 
       $routeProvider.
         when('/home', {
-          template: '<find-serie-list></find-serie-list>'
+          template: '<find-series></find-series>'
         }).
         when('/perfil', {
           template: '<user-serie-list></user-serie-list>'
@@ -19,9 +19,6 @@ angular.
         }).
         when('/serie/:imdbID', {
           template: '<serie></serie>',
-        }).
-        when('/modal', {
-          template: '<modal></modal>',
         }).
         otherwise('/home');
     }

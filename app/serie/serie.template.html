@@ -14,11 +14,12 @@
           <p><b>Escritor: </b>{{$ctrl.serieObj.Writer}}</p>
           <p><b>Média do IMDB: </b>{{$ctrl.serieObj.imdbRating}}</p>
       </div>
-      <div class="col-xs-5 centered">
-      {{$ctrl.serieObj.nota}}
-          <p><b>Minha avaliação: </b><input type="text" name="nota" ng-model="$ctrl.serieObj.nota"></p>
-          <p><b>Último epsódio assistido: </b><input type="text" name="episodio" ng-model="$ctrl.serieObj.episodio"></p>
-          <p><b>Temporada: </b><input type="number" name="temporada" ng-model="$ctrl.serieObj.temporada"></p>
+      <div class="col-xs-6 centered">
+        <form>
+          <p><b>Minha avaliação: </b><input type="number" name="nota" min="0" max="10" step="0.1" ng-model="$ctrl.serieObj.myRating"></p>
+          <p><b>Último epsódio assistido: </b><input type="text" name="episodio" ng-model="$ctrl.serieObj.lastWatchedEpisode"></p>
+          <p><b>Temporada: </b><input type="number" name="temporada" min="0" max="{{$ctrl.serieObj.totalSeasons}}" ng-model="$ctrl.serieObj.mySeason"></p>
+        </form>
       </div>
     </div>
   </div>
