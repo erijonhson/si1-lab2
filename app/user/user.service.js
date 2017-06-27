@@ -61,16 +61,18 @@ angular.
     }
 
     ctrl.atualizaSerie = function(serie) {
+      if (serie == null || serie == undefined)
+        return undefined;
       var list = ctrl.serieList.list;
       for (var i = 0; i < list.length; i++) {
-        if (list[i].imdbID === imdbID) {
+        if (list[i].imdbID === serie.imdbID) {
           list[i] = serie;
           return undefined;
         }
       }
       list = ctrl.watchList.list;
       for (var i = 0; i < list.length; i++) {
-        if (list[i].imdbID === imdbID) {
+        if (list[i].imdbID === serie.imdbID) {
           list[i] = serie;
           return undefined;
         }
@@ -78,6 +80,8 @@ angular.
     }
 
     function buscaSerie(list, serie) {
+      if (serie == null || serie == undefined)
+        return false;
       for (var i = 0; i < list.length; i++) {
         if (list[i].imdbID === serie.imdbID)
           return true;

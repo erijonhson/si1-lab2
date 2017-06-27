@@ -14,10 +14,11 @@ angular.
         var hack = serieService.buscarUmaSerie($routeParams.imdbID)
               .then(function(data) {
                 var serieDeUsuario = userService.getSerie($routeParams.imdbID);
-                if (serieDeUsuario === null || 
-                  serieDeUsuario === undefined || 
-                  serieDeUsuario.Plot === null) {
-                    ctrl.serieObj = data.data; 
+                if (serieDeUsuario == null || 
+                  serieDeUsuario == undefined || 
+                  serieDeUsuario.Plot == null ||
+                  serieDeUsuario.Plot == undefined) {
+                    ctrl.serieObj = data.data;
                     userService.atualizaSerie(ctrl.serieObj);
                 } else {
                   ctrl.serieObj = serieDeUsuario;

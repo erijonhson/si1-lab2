@@ -14,7 +14,8 @@ angular.
         function (response){
           if (response.data.Error !== undefined) {
             modalService.mostraAlertaSimples('Erro: ' + response.data.Error);
-            return undefined;
+            var result = {data: undefined};
+            return result;
           }
           else {
             var result = {};
@@ -25,18 +26,19 @@ angular.
         function (response){
           modalService.mostraAlertaSimples(`Erro de busca ao banco de dados. `
             + `Verifique sua conexão com a internet.`);
-          return undefined;
+          var result = {data: undefined};
+          return result;
         });
     }
  
     ctrl.buscarSeries = function(tituloDaSerie) {
+      var result = {data: undefined};
       return $http.get(viaTitle.replace('TITLE', tituloDaSerie)).then(
         function (response){
           if (response.data.Error !== undefined) {
             modalService.mostraAlertaSimples('Erro: ' + response.data.Error);
-            return undefined;
+            return result;
           } else {
-            var result = {};
             result.data = constroiSeries(response.data.Search);
             return result;
           }
@@ -44,7 +46,7 @@ angular.
         function (response){
           modalService.mostraAlertaSimples(`Erro de busca ao banco de dados. `
             + `Verifique sua conexão com a internet.`);
-          return undefined;
+          return result;
         });
     }
  
@@ -54,7 +56,7 @@ angular.
 
     function constroiSeries(seriesOmdbapi) {
       var listaDeSeries = [];
-      for (var i = seriesOmdbapi.length - 1; i >= 0; i--) {
+      for (var i = 0; i < seriesOmdbapi.length; i++) {
         listaDeSeries.push(new serieFactory(seriesOmdbapi[i]));
       }
       return listaDeSeries;
